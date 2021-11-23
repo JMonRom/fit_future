@@ -1,6 +1,7 @@
 const { Food, Matchup } = require('../models');
 
 const resolvers = {
+  
   Query: {
     tech: async () => {
       return Food.find({});
