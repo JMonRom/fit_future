@@ -11,7 +11,7 @@ const foodSchema = new Schema({
   },
 })
 
-const Journal = model('Journal', journalSchema);
+const Journal = model('Journal', foodSchema);
 
 module.exports = Journal;
 
