@@ -26,3 +26,9 @@ const resolvers = {
     },
   },
 };
+
+const typeDef = gql`
+  type Food: {
+    _id: 
+  }
+`;
