@@ -123,9 +123,6 @@ const Blog7 = () => {
     )
 }
 
-
-
-
 export default Blog
 export default Blog2
 export default Blog3
