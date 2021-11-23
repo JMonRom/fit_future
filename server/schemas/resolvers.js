@@ -2,7 +2,7 @@ const { User, Matchup } = require('../models');
 
 const resolvers = {
   Query: {
-    tech: async () => {
+    User: async () => {
       return User.find({});
     },
     matchups: async (parent, { _id }) => {
