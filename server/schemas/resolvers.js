@@ -1,19 +1,19 @@
-const { User, Matchup } = require('../models');
+const { User, Profiles } = require('../models');
 
 const resolvers = {
   Query: {
-    User: async () => {
-      return User.find({});
+    profiles: async () => {
+      return Profiles.find({});
     },
-    matchups: async (parent, { _id }) => {
+    foods: async (parent, { _id }) => {
       const params = _id ? { _id } : {};
-      return Matchup.find(params);
+      return Food.find(params);
     },
   },
   Mutation: {
-    createMatchup: async (parent, args) => {
-      const matchup = await Matchup.create(args);
-      return matchup;
+    addProfile: async (parent, args) => {
+      const profile = await Profiles.create(args);
+      return profile;
     },
     addFood: async (parent, { _id, Food }) => {
       const food = await Matchup.findOneAndUpdate(

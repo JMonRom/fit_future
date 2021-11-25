@@ -1,7 +1,7 @@
 module.export = {
   // include modules
-  InsertName : require(""),
-  InsertName : require("")
+  User : require("./Profiles"),
+  Food: require("./Food")
 }
 
 // OR
