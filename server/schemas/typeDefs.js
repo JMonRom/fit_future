@@ -7,16 +7,14 @@ const typeDefs = gql`
   }
 
   type Query {
-    profiles: [User]!
-    profile(UserId: ID!): User
+    profiles: Profile
+    profile(UserId: ID!): Profile
     foods: String
   }
 
   type Mutation {
-    addProfile: async (parent, args) => {
-      const addProfile = await 
-    }
-    addFood: 
+    addProfile(names: String!): Profiles
+    addFood: String
   }
 `;
 

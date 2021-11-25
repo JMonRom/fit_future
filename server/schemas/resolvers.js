@@ -11,12 +11,11 @@ const resolvers = {
     },
   },
   Mutation: {
-    addProfile: async (parent, args) => {
-      const profile = await Profiles.create(args);
-      return profile;
+    addProfile: async (parent, {name}) => {
+      return Profiles.create({name})
     },
     addFood: async (parent, { _id, Food }) => {
-      const food = await Matchup.findOneAndUpdate(
+      const food = await Food.findOneAndUpdate(
         { _id },
         { $inc: { [`Food Added:${Food}`]: 1 } },
         { new: true }
