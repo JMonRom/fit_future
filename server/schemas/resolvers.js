@@ -3,17 +3,17 @@ const { User, Profiles } = require('../models');
 const resolvers = {
   Query: {
     profiles: async () => {
-      return User.find({});
+      return Profiles.find({});
     },
     foods: async (parent, { _id }) => {
       const params = _id ? { _id } : {};
-      return Matchup.find(params);
+      return Food.find(params);
     },
   },
   Mutation: {
     addProfile: async (parent, args) => {
-      const matchup = await Matchup.create(args);
-      return matchup;
+      const profile = await Profiles.create(args);
+      return profile;
     },
     addFood: async (parent, { _id, Food }) => {
       const food = await Matchup.findOneAndUpdate(

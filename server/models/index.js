@@ -1,6 +1,6 @@
 module.export = {
   // include modules
-  User : require("./User"),
+  User : require("./Profiles"),
   Food: require("./Food")
 }
 
