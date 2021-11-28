@@ -184,3 +184,23 @@ nav ul li {
     display: none;
   }
 }
+
+.btn-nav {
+  width: 33.3%;
+  height: 200px;
+  background-color: rgb(93, 93, 93);
+  color: white
+}
+
+.topNav {
+  display: flex;
+}
+
+.contentSpace {
+  display: flex;
+  margin: 20px;
+  padding:10px;
+  background-color: whitesmoke;
+  border-color:darkslategrey;
+
+}
