@@ -7,14 +7,14 @@ const typeDefs = gql`
   }
 
   type Query {
-    profiles: [Profiles]!
-    profile(UserId: ID!): User
+    profiles: Profile
+    profile(UserId: ID!): Profile
     foods: String
   }
 
   type Mutation {
-    addProfile(name:String!): Profiles
-    # addFood: 
+    addProfile(names: String!): Profiles
+    addFood: String
   }
 `;
 

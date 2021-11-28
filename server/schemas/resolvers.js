@@ -11,9 +11,8 @@ const resolvers = {
     },
   },
   Mutation: {
-    addProfile: async (parent, args) => {
-      const profile = await Profiles.create(args);
-      return profile;
+    addProfile: async (parent, {name}) => {
+      return Profiles.create({name})
     },
     addFood: async (parent, { _id, Food }) => {
       const food = await Food.findOneAndUpdate(
