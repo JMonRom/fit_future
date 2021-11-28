@@ -1,4 +1,4 @@
-const { User, Profiles } = require('../models');
+const { , Profiles } = require('../models');
 
 const resolvers = {
   Query: {
@@ -16,7 +16,7 @@ const resolvers = {
       return profile;
     },
     addFood: async (parent, { _id, Food }) => {
-      const food = await Matchup.findOneAndUpdate(
+      const food = await Food.findOneAndUpdate(
         { _id },
         { $inc: { [`Food Added:${Food}`]: 1 } },
         { new: true }

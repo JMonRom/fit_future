@@ -3,20 +3,18 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   type User {
     _id: ID
-    name: String
+    name: String!
   }
 
   type Query {
-    profiles: [User]!
+    profiles: [Profiles]!
     profile(UserId: ID!): User
     foods: String
   }
 
   type Mutation {
-    addProfile: async (parent, args) => {
-      const addProfile = await 
-    }
-    addFood: 
+    addProfile(name:String!): Profiles
+    # addFood: 
   }
 `;
 
