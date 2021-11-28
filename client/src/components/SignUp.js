@@ -4,7 +4,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import {createUser} from '../utils/API';
 import Auth from '../utils/auth';
 
-const SignUp = () => {
+const Signup = () => {
   const [userFormData, setUserFormData] = useState({
     username: '', email: '', password: ''
   });
@@ -105,4 +105,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Signup;
