@@ -1,4 +1,4 @@
-import React from "react";
+import React, {userState} from "react";
 // REACT FONTAWESOME IMPORTS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -26,8 +26,12 @@ const Navbar = () => {
         <a className="nav-link" href="#">Track Calories</a>
       </li>
       <li className="nav-item">
+        <a className="nav-link" href="#">Login</a>
+      </li>
+      <li className="nav-item">
         <a className="nav-link" href="#">Contact Us</a>
       </li>
+      
     </ul>
     
   </div>
