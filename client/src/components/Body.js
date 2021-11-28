@@ -1,13 +1,4 @@
 import React from 'react';
-// Set up the title/header
-const element = (
-    <div>
-        <header>
-            <h1>Food Journal</h1>
-        </header>
-    </div>
-)
-ReactDOM.render(element, document.getElementById('root'));
 
 // List of the days of the week 
 const blogFood = () => {
@@ -27,4 +18,4 @@ const blogFood = () => {
     )
 }
 
-export default Blog
+export default blogFood
