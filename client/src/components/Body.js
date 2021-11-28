@@ -1,6 +1,6 @@
 import React from 'react';
 
-// List of the days of the week 
+// List of nutrition intake
 function BlogFood() {
     return (
         <div>
