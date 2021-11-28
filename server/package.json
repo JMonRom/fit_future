@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
   "dependencies": {
     "apollo-server-core": "^3.5.0",
     "apollo-server-express": "^3.5.0",
+    "bcrypt": "^5.0.1",
     "express": "^4.17.1",
     "graphql": "^16.0.1",
     "mongoose": "^6.0.13"
