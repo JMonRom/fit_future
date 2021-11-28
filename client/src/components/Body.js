@@ -1,7 +1,7 @@
 import React from 'react';
 
 // List of the days of the week 
-const blogFood = () => {
+function BlogFood() {
     return (
         <div>
             <div>
@@ -18,4 +18,4 @@ const blogFood = () => {
     )
 }
 
-export default blogFood
+export default BlogFood;
