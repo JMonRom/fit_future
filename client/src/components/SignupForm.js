@@ -4,10 +4,9 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import {createUser} from '../utils/API';
 import Auth from '../utils/auth';
 
-const Signup = () => {
+const SignupForm = () => {
   const [userFormData, setUserFormData] = useState({
-    username: '', email: '', password: ''
-  });
+    username: '', email: '', password: ''});
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
@@ -88,7 +87,7 @@ const Signup = () => {
             placeholder='Your password'
             name='password'
             onChange={handleInputChange}
-            value={userFormData.username}
+            value={userFormData.password}
             required
           />
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
@@ -105,4 +104,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignupForm;
