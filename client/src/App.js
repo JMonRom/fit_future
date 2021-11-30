@@ -12,9 +12,12 @@ import TrackFood from './components/Body';
 function App() {
   return (
     <>
+    
     <Navbar />
     <Header />
+    <timeBtn />
     <btnNav />
+    <saveBtn/>
     <contentList />
     <TrackFood />
     </>

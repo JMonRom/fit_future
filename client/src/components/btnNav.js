@@ -1,4 +1,4 @@
-const timeBtn = () => {
+function timeBtn() {
     return (
         <div class="topNav">
             <button class="btn-nav" onClick={morningBtn}>Morning</button>
