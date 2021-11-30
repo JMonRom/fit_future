@@ -1,30 +1,21 @@
 import React from 'react';
-// Set up the title/header
-const element = (
-    <div>
-        <header>
-            <h1>Food Journal</h1>
-        </header>
-    </div>
-)
-ReactDOM.render(element, document.getElementById('root'));
 
-// List of the days of the week 
-const blogFood = () => {
+// List of nutrition intake
+function TrackFood() {
     return (
         <div>
             <div>
                 <h3>Total consumption</h3>
                 <ol>
-                    <li>Carbs: {''}</li>
-                    <li>Sugar: {''}</li>
-                    <li>Fat: {''}</li>
-                    <li>Protein: {''}</li>
-                    <li>Calories: {''}</li>
+                    <li className="list-style">Carbs: {''}</li>
+                    <li className="list-style">Sugar: {''}</li>
+                    <li className="list-style">Fat: {''}</li>
+                    <li className="list-style">Protein: {''}</li>
+                    <li className="list-style">Calories: {''}</li>
                 </ol>
             </div>
         </div>
     )
 }
 
-export default Blog
+export default TrackFood;
