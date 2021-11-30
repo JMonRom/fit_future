@@ -1,4 +1,4 @@
-const content = () => {
+const contentList = () => {
     return (
         <div class="contentSpace">
             
@@ -6,4 +6,4 @@ const content = () => {
     )
 }
 
-export default content()
+export default contentList()
