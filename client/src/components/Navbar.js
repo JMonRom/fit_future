@@ -1,45 +1,81 @@
-import React, {userState} from "react";
+import React, { useState } from "react";
+import { Link } from 'react-router-dom';
+import { Navbar, Nav, Container, Modal, Tab} from 'react-bootstrap'; 
 // REACT FONTAWESOME IMPORTS
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faBars } from "@fortawesome/free-solid-svg-icons";
+import SignUpForm from './SignupForm';
+import LoginForm from './LoginForm';
+
+import Auth from '../utils/auth';
 
 
+const AppNavbar = () => {
+  const [showModal, setShowModal] = useState(false);
 
-const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-<div className="container">
-  <a className="navbar-brand" href="#"> <img className="logo" src-="" alt="logo..."/></a>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <FontAwesomeIcon icon={faBars} style={{color: "#fff"}}/>
-  </button>
 
-  <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul className="navbar-nav ml-auto">
-      <li className="nav-item active">
-        <a className="nav-link" href="#">Home </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Services</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="./">Track Calories</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Login</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Contact Us</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  </div>
-</nav>
+    <>
+      <Navbar bg='dark' variant='dark' expand='lg'>
+        <Container fluid>
+          <Navbar.Brand as={Link} to='/'>
+            Fitness Future
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls='navbar' />
+          <Navbar.Collapse id='navbar'>
+            <Nav className='ml-auto'>
+              <Nav.Link as={Link} to='/'>
+                Search for Food Entry:
+              </Nav.Link>
+              {Auth.loggedIn() ? (
+                <>
+                <Nav.Link as={Link} to='/saved'>
+                  Saved Food Entries
+                </Nav.Link>
+                <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                </>
+              ) : (
+                <Nav.Link onClick={() => setShowModal(true)}>Login / Sign Up</Nav.Link>
+              )}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <Modal
+        size='lg'
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        aria-balledby = 'signup-modal'
+      >
+        <Tab.Container defaultActiveKey='login'>
+          <Modal.Header closeButton>
+            <Modal.Title id='signup-modal'>
+              <Nav variant='pills'>
+                <Nav.Item>
+                  <Nav.Link eventKey='login'>Login</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Tab.Content>
+              <Tab.Pane eventKey='login'>
+                <LoginForm handleModalClose={() => 
+                setShowModal(false)} />
+              </Tab.Pane>
+              <Tab.Pane eventKey='signup'>
+                <SignUpForm handleModalClose={() => 
+                setShowModal(false)} />
+              </Tab.Pane>
+            </Tab.Content>
+          </Modal.Body>
+        </Tab.Container>
+      </Modal>
+    </>
   )
 }
 
-
-export default Navbar
+export default AppNavbar;
