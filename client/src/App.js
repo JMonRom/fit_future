@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 // import saveBtn from './components/saveBtn';
 import contentList from './components/contentList';
-import BlogFood from './components/Body';
+import TrackFood from './components/Body';
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
     <Header />
     <btnNav />
     <contentList />
-    <BlogFood />
+    <TrackFood />
     </>
   );
 }

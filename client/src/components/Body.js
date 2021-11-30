@@ -1,21 +1,21 @@
 import React from 'react';
 
 // List of nutrition intake
-function BlogFood() {
+function TrackFood() {
     return (
         <div>
             <div>
                 <h3>Total consumption</h3>
                 <ol>
-                    <li>Carbs: {''}</li>
-                    <li>Sugar: {''}</li>
-                    <li>Fat: {''}</li>
-                    <li>Protein: {''}</li>
-                    <li>Calories: {''}</li>
+                    <li className="list-style">Carbs: {''}</li>
+                    <li className="list-style">Sugar: {''}</li>
+                    <li className="list-style">Fat: {''}</li>
+                    <li className="list-style">Protein: {''}</li>
+                    <li className="list-style">Calories: {''}</li>
                 </ol>
             </div>
         </div>
     )
 }
 
-export default BlogFood;
+export default TrackFood;
