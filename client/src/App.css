@@ -67,7 +67,27 @@ h6 {
   font-family: 'Rubik Mono One', sans-serif;
 }
 
-.small {
-  font-weight: 300;
-  font-style: italic;
+@media (max-width: 768px) {
+  .particles-canvas {
+    display: none;
+  }
+}
+
+.btn-nav {
+  width: 33.3%;
+  height: 200px;
+  background-color: rgb(93, 93, 93);
+  color: white
+}
+
+.topNav {
+  display: flex;
+}
+
+.contentSpace {
+  display: flex;
+  margin: 20px;
+  padding:10px;
+  background-color: whitesmoke;
+  border-color:darkslategrey;
 }

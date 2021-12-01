@@ -1,7 +1,6 @@
 
 export const getUser = (token) => {
   return fetch('/api/users/me', {
-    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     authorization: `Test test test ${token}`,
