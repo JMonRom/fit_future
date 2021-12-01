@@ -71,6 +71,7 @@ h6 {
 .small {
   font-weight: 300;
   font-style: italic;
+}
 
 @media (max-width: 768px) {
   .particles-canvas {
