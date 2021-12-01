@@ -1,11 +1,10 @@
 
-export const createUser = (userData) => {
-  return fetch('/api/users', {
-    method: 'POST',
+export const getUser = (token) => {
+  return fetch('/api/users/me', {
     headers: {
       'Content-Type': 'application/json',
+    authorization: `Test test test ${token}`,
     },
-    body: JSON.stringify(userData),
   });
 };
 
@@ -16,6 +15,35 @@ export const loginUser = (userData) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(userData),
+  });
+};
+
+export const createUser = (userData) => {
+  return fetch('/api/users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    }, body: JSON.stringify(userData),
+  });
+};
+
+export const saveFood = (foodData, token) => {
+  return fetch('/api/users', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `TEST TEST TEST ${token}`,
+    },
+    body: JSON.stringify(foodData),
+  });
+};
+
+export const deleteFood = (foodId, token) => {
+  return fetch(`/api/users/foods/${foodId}`, {
+    method: 'DELETE',
+    headers: {
+      authorization: `TEST TEST TEST ${token}`,
+    },
   });
 };
 
