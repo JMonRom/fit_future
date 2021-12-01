@@ -4,21 +4,50 @@
 // import Particles from "react-tsparticles";
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import SearchFoods from './pages/SearchFoods';
+import SavedFoods from './pages/SavedFoods';
+import Navbar from './components/Navbar';
+import Header from "./components/Header";
+import TrackFood from './components/Body';
 
-import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css";
+const httpLink = createHttpLink({
+  uri: '/graphql'
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
+// import './App.css';
+// import "bootstrap/dist/css/bootstrap.min.css";
 // import Particles from "react-tsparticles";
 
-import Navbar from "./components/Navbar";
-// import SearchFoods from './pages/SearchFood';
-import Header from "./components/Header";
+
 // import saveBtn from './components/saveBtn';
 // import contentList from './components/contentList';
-import TrackFood from './components/Body';
 
 
 function App() {
   return (
+    <ApolloProvider client={client}>
     <Router>
     <>
     <Navbar />
@@ -33,6 +62,7 @@ function App() {
     <TrackFood />
     </>
     </Router>
+    </ApolloProvider>
   );
 }
 

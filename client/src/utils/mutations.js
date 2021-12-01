@@ -36,12 +36,7 @@ export const ADD_USER = gql`
         email
         foodCount
         savedFoods {
-          authors
           foodId
-          image
-          link
-          title
-          description
         }
       }
     }
@@ -61,7 +56,7 @@ export const SAVE_FOOD = gql`
   }
 `;
 
-export const REMOVE_BOOK = gql`
+export const REMOVE_FOOD = gql`
   mutation removeFood($foodId: ID!) {
     removeFood(foodId: $foodId) {
       _id

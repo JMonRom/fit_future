@@ -5,7 +5,7 @@ import Auth from '../utils/auth';
 import { removeFoodId } from '../utils/localStorage';
 import { useQuery, useMutation } from '@apollo/client';
 import { GET_ME } from '../utils/queries';
-import { REMOVE_FOOD } from '../utils/queries';
+import { REMOVE_FOOD } from '../utils/mutations';
 
 const SavedFoods = () => {
   const { loading, data } = useQuery(GET_ME);
@@ -37,9 +37,9 @@ const SavedFoods = () => {
   return (
     <>
     <Jumbotron fluid className='text-light bg-dark'>
-      <Conatainer>
+      <Container>
         <h1>Viewing Saved Foods!</h1>
-      </Conatainer>
+      </Container>
     </Jumbotron>
     <Container>
       <h2>
