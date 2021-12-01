@@ -7,6 +7,7 @@ import Header from "./components/Header";
 // import saveBtn from './components/saveBtn';
 import contentList from './components/contentList';
 import TrackFood from './components/Body';
+import LogFood from './components/BlogFood'
 
 
 function App() {
