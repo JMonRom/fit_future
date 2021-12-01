@@ -50,10 +50,6 @@
 
 body {
   font-family: "Roboto Condensed" sans-serif;
-}
-
-/********* Navbar **********/
-body {
   font-family: 'Rubik', sans-serif;
   background-color: var(--primaryColor);
 }
@@ -71,12 +67,6 @@ h6 {
 .small {
   font-weight: 300;
   font-style: italic;
-
-@media (max-width: 768px) {
-  .particles-canvas {
-    display: none;
-  }
-}
 }
 
 .btn-nav {
