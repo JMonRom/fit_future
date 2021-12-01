@@ -14,7 +14,7 @@ import Navbar from "./components/Navbar";
 // import SearchFoods from './pages/SearchFood';
 import Header from "./components/Header";
 // import saveBtn from './components/saveBtn';
-import contentList from './components/contentList';
+// import contentList from './components/contentList';
 import TrackFood from './components/Body';
 
 
