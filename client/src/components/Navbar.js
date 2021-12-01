@@ -38,7 +38,7 @@ const AppNavbar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* set modal data up */}
+      
       <Modal
         size='lg'
         show={showModal}
@@ -71,7 +71,7 @@ const AppNavbar = () => {
         </Tab.Container>
       </Modal>
     </>
-  );
-};
+  )
+}
 
 export default AppNavbar;
