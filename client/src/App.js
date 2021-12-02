@@ -51,9 +51,9 @@ function App() {
     <Router>
     <>
     <Navbar />
-    {/* <Switch>
+    {<Switch>
       <Route exact path='/' component={SearchFoods}/>
-    </Switch> */}
+    </Switch>}
     <Header />
     <timeBtn />
     <btnNav />
@@ -63,6 +63,7 @@ function App() {
     </>
     </Router>
     </ApolloProvider>
+
   );
 }
 
