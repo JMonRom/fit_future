@@ -37,6 +37,9 @@ export const ADD_USER = gql`
         foodCount
         savedFoods {
           foodId
+          foodDesc 
+          imageId
+          nutrients
         }
       }
     }
@@ -51,6 +54,7 @@ export const SAVE_FOOD = gql`
       email
       savedFoods {
         foodId
+
       }
     }
   }
