@@ -6,6 +6,7 @@ import { removeFoodId } from '../utils/localStorage';
 import { useQuery, useMutation } from '@apollo/client';
 import { GET_ME } from '../utils/queries';
 import { REMOVE_FOOD } from '../utils/mutations';
+import food from '../utils/APIfood'
 
 const SavedFoods = () => {
   const { loading, data } = useQuery(GET_ME);

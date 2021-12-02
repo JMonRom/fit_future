@@ -69,6 +69,12 @@ h6 {
   font-style: italic;
 }
 
+@media (max-width: 768px) {
+  .particles-canvas {
+    display: none;
+  }
+}
+
 .btn-nav {
   width: 33.3%;
   height: 200px;
