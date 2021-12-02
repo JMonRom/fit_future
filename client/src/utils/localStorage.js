@@ -1,7 +1,7 @@
 export const getSavedFoodIds = () => {
   const savedFoodIds = localStorage.getItem('saved_foods') ? JSON.parse(localStorage.getItem('saved_foods'))
     : [];
-  return savedFoodIds
+  return savedFoodIds;
 }
 
 export const saveFoodIds = (foodIdArr) => {
