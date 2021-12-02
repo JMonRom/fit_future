@@ -16,6 +16,7 @@ import SavedFoods from './pages/SavedFoods';
 import Navbar from './components/Navbar';
 import Header from "./components/Header";
 import TrackFood from './components/Body';
+import inputArea from './components/inputBar';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -50,20 +51,22 @@ function App() {
     <Router>
     <>
     <Navbar />
-    <Routes>
+    {<Routes>
       <Route exact path='/' component={SearchFoods}/>
       <Route exact path='/saved' component={SavedFoods} />
       <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
-    </Routes>
+        </Route>
+    </Routes>}
     <Header />
     <timeBtn />
     <btnNav />
-    <saveBtn/>
+    <inputArea />
     <contentList />
     <TrackFood />
     </>
     </Router>
     </ApolloProvider>
+
   );
 }
 

@@ -5,15 +5,18 @@ const addFoodKey = 'eatFood'
 
 function addFood() {
     const [food, setFood] = useState //('REST API keys of id, sring, number of etc')
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const foodRef = useRef() //Allows access to the input so that it knows we are using it
 
     // Stores the food items
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
         const storeFood = JSON.parse(localStorage.getItem(addFoodKey))
         if (storeFood) setFood(storeFood)
-    }, [])
+    }, )
 
     // Getting food items
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
         localStorage.setItem(addFoodKey, JSON.stringify(food))
     }, [food])
@@ -32,3 +35,5 @@ function addFood() {
         </>
     )
 }
+
+export default addFood
