@@ -24,11 +24,12 @@ const SearchFoods = () => {
       return false;
     }
 
+
+
     try {
-      const response = async (query) => {
-        const responsefood = await food(query);
-        setSearchedFoods(response.data.data)
-      }
+      const response = await fetch(
+        `https://www.mynetdiary.com/foodSearch.do?q=${searchInput}`
+      )
 
 
       if(!response.ok) {
@@ -39,7 +40,7 @@ const SearchFoods = () => {
 
       // change and add depending on data from API
       const foodData = items.map((food) => ({
-        foodId: food.id,
+        foodId: food
         // finish including other API data
       })); 
 
@@ -113,12 +114,12 @@ const SearchFoods = () => {
                 ) : null}
                 <Card.Body>
                   {/* change ".entry", ".calories", ".fat" */}
-                  <Card.Title>{food.entry}</Card.Title>
+                  <Card.Title>{food}</Card.Title>
                   <Card.Text>
-                  <p className='small'>Calories: {food.calories}</p>
-                  <p className='small'>Total Fat: {food.fat}</p>
-                  <p className='small'>Sugar: {food.sugar}</p>
-                  <p className='small'>Carbs: {food.carbs}</p>
+                  <p className='small'>Calories:  {food}</p>
+                  <p className='small'>Total Fat: {food}</p>
+                  <p className='small'>Sugar: {food}</p>
+                  <p className='small'>Carbs: {food}</p>
                   </Card.Text>
                   {Auth.loggedIn() && (
                     <Button

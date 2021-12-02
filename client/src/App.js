@@ -51,12 +51,11 @@ function App() {
     <Router>
     <>
     <Navbar />
-    {<Routes>
+    <Routes>
       <Route exact path='/' component={SearchFoods}/>
       <Route exact path='/saved' component={SavedFoods} />
       <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
-        </Route>
-    </Routes>}
+      </Routes>
     <Header />
     <timeBtn />
     <btnNav />
