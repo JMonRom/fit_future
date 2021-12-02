@@ -16,6 +16,7 @@ import SavedFoods from './pages/SavedFoods';
 import Navbar from './components/Navbar';
 import Header from "./components/Header";
 import TrackFood from './components/Body';
+import inputArea from './components/inputBar';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -57,7 +58,7 @@ function App() {
     <Header />
     <timeBtn />
     <btnNav />
-    <saveBtn/>
+    <inputArea />
     <contentList />
     <TrackFood />
     </>
