@@ -26,8 +26,9 @@ const SearchFoods = () => {
     try {
       const response = await fetch(
         // INSERT API for SEARCH
-        ``
-      );
+        "http://www.mynetdiary.com/db"
+        );
+
 
       if(!response.ok) {
         throw new Error('Something went wrong!');
