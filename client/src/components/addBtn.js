@@ -35,3 +35,5 @@ function addFood() {
         </>
     )
 }
+
+export default addFood
