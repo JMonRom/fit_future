@@ -1,4 +1,3 @@
-
 foodList.init(
     {
         id: {
