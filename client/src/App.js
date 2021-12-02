@@ -3,7 +3,7 @@
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import Particles from "react-tsparticles";
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -51,9 +51,12 @@ function App() {
     <Router>
     <>
     <Navbar />
-    {<Switch>
+    {<Routes>
       <Route exact path='/' component={SearchFoods}/>
-    </Switch>}
+      <Route exact path='/saved' component={SavedFoods}/>
+      <Route render={() => <h1 className='display-2'>Wrong page!</h1>}>
+      </Route>
+    </Routes>}
     <Header />
     <timeBtn />
     <btnNav />
