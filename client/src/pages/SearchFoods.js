@@ -4,6 +4,7 @@ import Auth from '../utils/auth';
 import { saveFoodIds, getSavedFoodIds } from '../utils/localStorage';
 import { useMutation } from '@apollo/client';
 import { SAVE_FOOD } from '../utils/mutations';
+import food from '../utils/APIfood';
 
 const SearchFoods = () => {
   const [searchedFoods, setSearchedFoods ] = useState([]);
@@ -24,10 +25,11 @@ const SearchFoods = () => {
     }
 
     try {
-      const response = await fetch(
-        // INSERT API for SEARCH
-        ``
-      );
+      const response = async (query) => {
+        const responsefood = await food(query);
+        setSearchedFoods(response.data.data)
+      }
+
 
       if(!response.ok) {
         throw new Error('Something went wrong!');
