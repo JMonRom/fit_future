@@ -44,7 +44,6 @@ const client = new ApolloClient({
 // import saveBtn from './components/saveBtn';
 // import contentList from './components/contentList';
 
-
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -53,7 +52,7 @@ function App() {
     <Navbar />
     <Routes>
       <Route exact path='/' component={SearchFoods}/>
-      <Route exact path='/' component={SavedFoods} />
+      <Route exact path='/saved' component={SavedFoods} />
       <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
     </Routes>
     <Header />
